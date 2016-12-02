@@ -18,6 +18,7 @@ module Dragonfly
       end
 
       def read(data_path)
+        binding.pry
         path = meta_path(data_path)
         File.open(path,'rb'){|f| load(f.read) } if File.exist?(path)
       end

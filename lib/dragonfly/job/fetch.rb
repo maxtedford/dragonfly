@@ -10,6 +10,7 @@ module Dragonfly
       end
 
       def apply
+        binding.pry
         content, meta = app.datastore.read(uid)
         raise NotFound, "uid #{uid} not found" if content.nil?
         job.content.update(content, meta)
